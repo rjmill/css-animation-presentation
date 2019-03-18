@@ -16,10 +16,11 @@
 
 #done-list li {
   text-decoration: line-through;
+  opacity: 0.6;
 }
 
-.transition-on-transforms {
-  transition-property: transform;
+.is-transitioning {
+  transition-property: transform, opacity;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
 }
@@ -49,7 +50,7 @@
   const eleDoneList = document.querySelector('#done-list');
 
   const cleanUpTransition = function(event) {
-    event.target.classList.remove('transition-on-transforms');
+    event.target.classList.remove('is-transitioning');
     // we're done with this for now, so remove it
     event.target.removeEventListener('transitionend', cleanUpTransition);
   }
@@ -63,12 +64,15 @@
 
     // Apply a transformation to put it back to it's original location
     ele.style.transform = `translate(${invert.left}px, ${invert.top}px)`;
+    ele.style.opacity = 1;
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        ele.classList.add('transition-on-transforms');
+        ele.classList.add('is-transitioning');
+
         // Remove the transformation
         ele.style.transform = '';
+        ele.style.opacity = '';
 
         ele.addEventListener('transitionend', cleanUpTransition);
       })
