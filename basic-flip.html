@@ -33,6 +33,11 @@
   const eleTodoList = document.querySelector('#todo-list');
   const eleDoneList = document.querySelector('#done-list');
 
+  const cleanUpTransition = function(event) {
+    event.target.classList.remove('transition-on-transforms');
+    // we're done with this for now, so remove it
+    event.target.removeEventListener('transitionend', cleanUpTransition);
+  }
 
   const flipOne = function(ele, first, last) {
     // invert
@@ -46,7 +51,8 @@
         ele.classList.add('transition-on-transforms');
         // Remove the transformation
         ele.style.transform = '';
-        // TODO: clean up on transition end
+
+        ele.addEventListener('transitionend', cleanUpTransition);
       })
     })
   }
