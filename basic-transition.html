@@ -8,8 +8,8 @@
 <body>
 <style>
 div {
-  height: 50px;
-  width: 300px;
+  min-height: 50px;
+  min-width: 300px;
   margin: 30px;
   padding: 5px;
 }
@@ -44,33 +44,69 @@ div:hover {
   transition-duration: 3s;
   transition-timing-function: ease-in-out;
 
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .transition-both-delayed {
   transition-property: transform, opacity;
   transition-duration: 3s;
   transition-timing-function: ease-in-out;
-  transition-delay: 5s;
+  transition-delay: 3s;
 
   background-color: pink;
 }
 </style>
 
   <div class="no-transition">
-    no transition
+    <h3>No transition (default)</h3>
+<pre>.no-transition {
+  background-color: grey;
+}</pre>
   </div>
+
   <div class="transition-opacity">
-    transition opacity
+    <h3>Transition opacity</h3>
+<pre>.transition-opacity {
+  <strong>transition-property: opacity;</strong>
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: yellow;
+}</pre>
   </div>
+
   <div class="transition-transform">
-    transition transform
+    <h3>Transition transform</h3>
+<pre>.transition-transform {
+  <strong>transition-property: transform;</strong>
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: lightblue;
+}</pre>
   </div>
+
   <div class="transition-both">
-    transition both
+    <h3>Transition opacity and transform</h3>
+<pre>.transition-both {
+  <strong>transition-property: transform, opacity;</strong>
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: lightgreen;
+}</pre>
   </div>
+
   <div class="transition-both-delayed">
-    transition both delayed
+    <h3>Delayed transition</h3>
+<pre>.transition-both-delayed {
+  transition-property: transform, opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+  <strong>transition-delay: 5s;</strong>
+
+  background-color: pink;
+}</pre>
   </div>
 </body>
 </html>
