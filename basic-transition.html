@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Basic Transition Demo</title>
+</head>
+<body>
+<style>
+div {
+  height: 50px;
+  width: 300px;
+  margin: 30px;
+  padding: 5px;
+}
+
+div:hover {
+  opacity: 0.1;
+  transform: translate(40px, 10px);
+}
+
+.no-transition {
+  background-color: grey;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: yellow;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: lightblue;
+}
+
+.transition-both {
+  transition-property: transform, opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+
+  background-color: green;
+}
+
+.transition-both-delayed {
+  transition-property: transform, opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 5s;
+
+  background-color: pink;
+}
+</style>
+
+  <div class="no-transition">
+    no transition
+  </div>
+  <div class="transition-opacity">
+    transition opacity
+  </div>
+  <div class="transition-transform">
+    transition transform
+  </div>
+  <div class="transition-both">
+    transition both
+  </div>
+  <div class="transition-both-delayed">
+    transition both delayed
+  </div>
+</body>
+</html>
