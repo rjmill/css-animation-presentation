@@ -6,6 +6,14 @@
   <title>Basic FLIP Demo</title>
 </head>
 <body>
+<style>
+.transition-on-transforms {
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+</style>
+
   <h3>To Do</h3>
   <ul id="todo-list">
     <li>friends</li>
@@ -15,20 +23,46 @@
     <li>I come to bury Caesar</li>
     <li>not to praise him</li>
   </ul>
+
   <h3>Done</h3>
-  <ul id="done-list"></ul>
+  <ul id="done-list">
+    <!-- nothing here yet -->
+  </ul>
+
 <script>
   const eleTodoList = document.querySelector('#todo-list');
   const eleDoneList = document.querySelector('#done-list');
 
+  const flipOne = function(ele) {
+    // first
+    let first = ele.getBoundingClientRect();
+    // move the node
+    eleDoneList.append(ele);
+    // last
+    let last = ele.getBoundingClientRect();
+    // invert
+    let invert = first.top - last.top;
+
+    // Apply a transformation to put it back to it's original location
+    ele.style.transform = `translate(0, ${invert}px)`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ele.classList.add('transition-on-transforms');
+        // Remove the transformation
+        ele.style.transform = '';
+        // TODO: clean up on transition end
+      })
+    })
+  }
   const handleMarkDone = function(event) {
-    console.log('handleMarkDone', event);
     let target = event.target;
     // EARLY RETURN
     if (target.tagName !== 'LI') {
       return; // skip if it's not a list item
     }
-    eleDoneList.append(target);
+    flipOne(target);
+    //eleDoneList.append(target);
   }
 
 
