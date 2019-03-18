@@ -7,6 +7,13 @@
 </head>
 <body>
 <style>
+
+.list-container {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 200px;
+}
+
 .transition-on-transforms {
   transition-property: transform;
   transition-duration: 1s;
@@ -14,20 +21,24 @@
 }
 </style>
 
-  <h3>To Do</h3>
-  <ul id="todo-list">
-    <li>friends</li>
-    <li>romans</li>
-    <li>countrymen</li>
-    <li>lend my your ears</li>
-    <li>I come to bury Caesar</li>
-    <li>not to praise him</li>
-  </ul>
+  <div class="list-container">
+    <h3>To Do</h3>
+    <ul id="todo-list">
+      <li>friends</li>
+      <li>romans</li>
+      <li>countrymen</li>
+      <li>lend my your ears</li>
+      <li>I come to bury Caesar</li>
+      <li>not to praise him</li>
+    </ul>
+  </div>
 
-  <h3>Done</h3>
-  <ul id="done-list">
-    <!-- nothing here yet -->
-  </ul>
+  <div class="list-container">
+    <h3>Done</h3>
+    <ul id="done-list">
+      <!-- nothing here yet -->
+    </ul>
+  </div>
 
 <script>
   const eleTodoList = document.querySelector('#todo-list');
