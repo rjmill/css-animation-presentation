@@ -51,21 +51,34 @@
     })
   }
 
+  const flipMany = function(eles, listFirst, listLast) {
+    for (let i = 0; i < eles.length; i++) {
+      let ele = eles[i];
+      let first = listFirst[i];
+      let last = listLast[i];
+      flipOne(ele, first, last);
+    }
+  }
+
   const handleMarkDone = function(event) {
     let target = event.target;
     // EARLY RETURN
     if (target.tagName !== 'LI') {
       return; // skip if it's not a list item
     }
+    let elesTodoItems = Array.from(
+      document.querySelectorAll('#todo-list li')
+    );
+
     // first
-    let first = target.getBoundingClientRect();
+    let listFirst = elesTodoItems.map(ele => ele.getBoundingClientRect());
 
     eleDoneList.append(target);
 
     // last
-    let last = target.getBoundingClientRect();
+    let listLast = elesTodoItems.map(ele => ele.getBoundingClientRect());
 
-    flipOne(target, first, last);
+    flipMany(elesTodoItems, listFirst, listLast);
   }
 
 
