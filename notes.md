@@ -56,6 +56,12 @@ element. Different states may be defined using pseudo-classes like :hover or
 - requestAnimationFrame
   - https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
 
+- transform
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+- animation
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
 
 # questions
 
