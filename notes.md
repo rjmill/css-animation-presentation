@@ -27,9 +27,9 @@ element. Different states may be defined using pseudo-classes like :hover or
 > Conceptual models are valuable in providing understanding, in predicting how
 > things will behave, and in figuring out what to do when things do not go as
 > planned
-  - Don Norman
-  - The Design of Everyday Things
-  - p.28
+- Don Norman
+- The Design of Everyday Things
+- p.28
 
 > More of the brain is devoted to vision and visual processing than any other
 > known function, including language. More neurons in the human brain are

@@ -1,18 +1,13 @@
 # CSS Animation Cheatsheet
 
-## Realtime vs non-realtime animations
-
-- 
-
-
 ## `transition`
 
-- `transition-property` The CSS property you want to animate on transition
+- `transition-property`
   - NOTE: The only values you should be specifying for this are `none`,
     `transform`, and `opacity`.
     - `transform` and `opacity` don't trigger reflow/layout, and they can be
       accelerated with the GPU
-- `transition-duration` How long you want the transition to last
+- `transition-duration`
 - `transition-timing-function` 
 - `transition-delay`
 
@@ -28,7 +23,11 @@ Example
 ```
 
 ### JavaScript events
-
 - `transitionend`
+  - useful for cleaning up event listeners
 - `transitionrun`
 - `transitioncancel`
+
+## FLIP
+
+- First Last Invert Play
