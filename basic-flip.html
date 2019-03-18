@@ -52,10 +52,13 @@
 
   const flipOne = function(ele, first, last) {
     // invert
-    let invert = first.top - last.top;
+    let invert = {
+      top: first.top - last.top,
+      left: first.left - last.left,
+    };
 
     // Apply a transformation to put it back to it's original location
-    ele.style.transform = `translate(0, ${invert}px)`;
+    ele.style.transform = `translate(${invert.left}px, ${invert.top}px)`;
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
